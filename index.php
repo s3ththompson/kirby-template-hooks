@@ -67,7 +67,7 @@ Kirby::plugin('afbora/kirby-template-hooks', [
             kirby()->trigger('page.' . $newPage->intendedTemplate()->name() . '.changeSlug:after', compact('newPage', 'oldPage'));
         },
 
-        'page.changeSlug:before' => function (Page $page, string $slug, string $languageCode) {
+        'page.changeSlug:before' => function (Page $page, string $slug, ?string $languageCode) {
             kirby()->trigger('page.' . $page->intendedTemplate()->name() . '.changeSlug:before', compact('page', 'slug', 'languageCode'));
         },
 
